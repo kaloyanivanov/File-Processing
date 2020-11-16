@@ -32,55 +32,53 @@ public class FileProcessingUI implements ActionListener{
 	  private boolean wantToLoadAnotherFile=false;
 
 	 public FileProcessingUI () {
-		 	label=new JLabel();  
-			label.setFont(new Font("Serif", Font.PLAIN, 25));
-			label.setText("Enter path of file to be processed:");
-			label.setBounds(310,0,1000,30); 
-			window.add(label);
-			label.setVisible(true);
-			window.setSize(1000, 600);
-			window.setResizable(false);
-			window.setLayout(null);  
-		    window.setVisible(true);
-			text.setBounds(380,40,200,30); 
-			text.setVisible(true);
-			window.add(text);
-		    firstButton.setBounds(430,100,95,30); 
-		    firstButton.addActionListener(this);
-		    firstButton.setText("Submit");
-		    window.add(firstButton);
-		    firstButton.setVisible(true);
-		    secondButton.setBounds(490,60,100,30); 
-		    secondButton.addActionListener(this);
-		    secondButton.setVisible(false);
-		    secondButton.setText("Save");
-		    window.add(secondButton);
-		    thirdButton.setBounds(600,60,150,30); 
-		    thirdButton.addActionListener(this);
-		    thirdButton.setVisible(false);
-		    window.add(thirdButton);
-		    content.setEditable(false);
-		    scroll.setBounds(50, 150, 500, 500);
-	        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-	        scroll.setVisible(false);
-	        window.add(scroll);
-	        errorMessage=new JLabel("Please enter a valid file path.");  
-			errorMessage.setBounds(150,150,1000,30); 
-			errorMessage.setFont(new Font("Serif", Font.PLAIN, 25));
-			errorMessage.setForeground(Color.red);
-			errorMessage.setVisible(false);
-	        window.add(errorMessage);
-	        info.setBounds(20,110,1000,30);
-	        info.setVisible(false);
-	        window.add(info);
-	        window.addWindowListener(new WindowAdapter() {
-			    public void windowClosing(WindowEvent e) {
+		 label=new JLabel();  
+		 label.setFont(new Font("Serif", Font.PLAIN, 25));
+		 label.setText("Enter path of file to be processed:");
+		 label.setBounds(310,0,1000,30); 
+		 window.add(label);
+		 label.setVisible(true);
+		 window.setSize(1000, 600);
+		 window.setResizable(false);
+		 window.setLayout(null);  
+		 window.setVisible(true);
+		 text.setBounds(380,40,200,30); 
+		 text.setVisible(true);
+		 window.add(text);
+		 firstButton.setBounds(430,100,95,30); 
+		 firstButton.addActionListener(this);
+		 firstButton.setText("Submit");
+		 window.add(firstButton);
+		 firstButton.setVisible(true);
+		 secondButton.setBounds(490,60,100,30); 
+		 secondButton.addActionListener(this);
+		 secondButton.setVisible(false);
+		 secondButton.setText("Save");
+		 window.add(secondButton);
+		 thirdButton.setBounds(600,60,150,30); 
+		 thirdButton.addActionListener(this);
+		 thirdButton.setVisible(false);
+		 window.add(thirdButton);
+		 content.setEditable(false);
+		 scroll.setBounds(50, 150, 500, 500);
+	         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+	         scroll.setVisible(false);
+	         window.add(scroll);
+	         errorMessage=new JLabel("Please enter a valid file path.");  
+		 errorMessage.setBounds(150,150,1000,30); 
+		 errorMessage.setFont(new Font("Serif", Font.PLAIN, 25));
+		 errorMessage.setForeground(Color.red);
+		 errorMessage.setVisible(false);
+	         window.add(errorMessage);
+	         info.setBounds(20,110,1000,30);
+	         info.setVisible(false);
+	         window.add(info);
+	         window.addWindowListener(new WindowAdapter() {
+		   public void windowClosing(WindowEvent e) {
 			    	 isWindowClosed=true;
 			    }
-			});
-		 
-		 
-	 }
+			});	 
+		 }
 	  
 	  public void actionPerformed(ActionEvent e) 
 	    { 
@@ -119,58 +117,54 @@ public class FileProcessingUI implements ActionListener{
 		 info.setVisible(false);
 		 secondButton.setVisible(false);
 		 thirdButton.setVisible(false);
-		 scroll.setVisible(false);
-		  
-	  }
+		 scroll.setVisible(false);	  
+	  
+	 	}
 	 
 	 
 	
 	public void menu() {
 		errorMessage.setVisible(false);
 		window.setSize(950, 750);
-		//window.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		info.setVisible(true);
-        label.setText("You can switch two lines or switch two words in your text document.");
-        label.setBounds(20,0,1000,30);
-        changeContentPreview();
-        text.setText("");
-        text.setBounds(100,60,200,30);
-        text.setVisible(true);
-        scroll.setVisible(true);
-	    firstButton.setText("Switch lines or words");
-	    firstButton.setBounds(310,60,170,30);
-	    secondButton.setVisible(true);
-	    thirdButton.setVisible(true);
-	   
-		
-		
+        	label.setText("You can switch two lines or switch two words in your text document.");
+        	label.setBounds(20,0,1000,30);
+        	changeContentPreview();
+        	text.setText("");
+        	text.setBounds(100,60,200,30);
+        	text.setVisible(true);
+        	scroll.setVisible(true);
+	   	firstButton.setText("Switch lines or words");
+	   	firstButton.setBounds(310,60,170,30);
+	   	secondButton.setVisible(true);
+	    	thirdButton.setVisible(true);			
 		}
 	
 	 public String getFilePath() {
-			return filePath;
+		return filePath;
 		}
-	 public void setFilePath(String filePath) {
-			this.filePath=filePath;
+	
+	
+	public void setFilePath(String filePath) {
+		this.filePath=filePath;
 		}
 	 
 	 
 	 public void setLines(LinkedList<String> lines) {
-			this.lines = lines;
+		this.lines = lines;
 		}
 	 
 	 public void fileErrorMessage() {
-		    errorMessage.setText("Please enter a valid file path.");;  
-			errorMessage.setBounds(150,150,1000,30); 
-			errorMessage.setVisible(true);
-		 
-	 }
+		errorMessage.setText("Please enter a valid file path.");;  
+		errorMessage.setBounds(150,150,1000,30); 
+		errorMessage.setVisible(true);	 
+	 	}
 	 
 	 public void indexErrorMessage() {
 		 errorMessage.setBounds(600,150,1000,30);
 		 errorMessage.setText("Please enter valid indexes.");	
-		 errorMessage.setVisible(true);
-		 
-	 }
+		 errorMessage.setVisible(true);	 
+	 	}
 
 
 
@@ -188,9 +182,9 @@ public class FileProcessingUI implements ActionListener{
 	
 	public void changeContentPreview() {
 		content.setText("");
-        for(int i=0; i < lines.size(); i++)
-		   {
-        	content.append(lines.get(i)+"\n");
+        	for(int i=0; i < lines.size(); i++){
+        	
+			content.append(lines.get(i)+"\n");
 		    }
 	}
 
