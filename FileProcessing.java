@@ -57,7 +57,7 @@ public class FileProcessing {
 	 }
 	 
 	 private static void menu() {
-		 boolean isFileChanged=false;
+			boolean isFileChanged=false;
 			do {
 				do {
 				try {
