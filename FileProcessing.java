@@ -30,7 +30,7 @@ public class FileProcessing {
 				if(UI.isWindowClosed()) break;
 				 String filePath=UI.getFilePath();
 				 UI.setFilePath(null);
-				file = new File(filePath);
+				 file = new File(filePath);
 				 scanner = new Scanner(file);
 				  while (scanner.hasNext()) {
 						  lines.add(scanner.nextLine());
@@ -59,8 +59,7 @@ public class FileProcessing {
 	 private static void menu() {
 		 boolean isFileChanged=false;
 			do {
-				
-			do {
+				do {
 				try {
 					TimeUnit.SECONDS.sleep(2);
 				} catch (InterruptedException e) {
@@ -74,8 +73,8 @@ public class FileProcessing {
 					if(isFileChanged) writeFile(file);
 					 break;}
 				if (UI.isWantToLoadAnotherFile()) break;
-			   }
-			while(UI.getIndexes()==null);
+			  	 }
+				while(UI.getIndexes()==null);
 			 if(UI.isWindowClosed()) break;
 			 if (UI.isWantToLoadAnotherFile()) break;
 			 scanner = new Scanner(UI.getIndexes());
@@ -87,8 +86,8 @@ public class FileProcessing {
 				 firstIdx=scanner.nextInt();
 				 secondIdx=scanner.nextInt();
 			}catch(NoSuchElementException ne) {
-					 UI.indexErrorMessage();
-					 UI.setIndexes(null);
+				 UI.indexErrorMessage();
+				 UI.setIndexes(null);
 				 }
 			 try {
 				thirdIdx=scanner.nextInt();
@@ -111,7 +110,7 @@ public class FileProcessing {
 					 UI.changeContentPreview();	
 					}
 				isFileChanged=true;
-			}
+			 
 			if(firstIdx!=null&&secondIdx!=null&&firstIdx<=lines.size()-1&&secondIdx<=lines.size()-1&&thirdIdx==null&&fourthIdx==null) {
 				switchLine(firstIdx,secondIdx,lines.get(firstIdx),lines.get(secondIdx));
 				 UI.changeContentPreview();
@@ -144,8 +143,8 @@ public class FileProcessing {
 	}
 	
 	private static void switchWord (int firstLineIdx,int firstWordIdx, int secondLineIdx, int secondWordIdx){
-		 StringBuilder firstLine=new StringBuilder();
-		 StringBuilder secondLine=new StringBuilder();
+		StringBuilder firstLine=new StringBuilder();
+		StringBuilder secondLine=new StringBuilder();
 		String firstToAppend=findWord(firstLineIdx,firstWordIdx);
 		String secondToAppend=findWord(secondLineIdx,secondWordIdx);
 		buildNewLine(firstLineIdx,firstWordIdx,firstLine,secondToAppend);
@@ -194,7 +193,7 @@ public class FileProcessing {
 				break;
 			}
 			scanner.next();
-			 index++;
+			index++;
 			 
 			}
 		 try{
@@ -241,7 +240,7 @@ public class FileProcessing {
 			scanner.next();
 			words++;
 		}
-		 try{
+		try{
 		      if(scanner!=null)
 			 scanner.close();
 		   }catch(Exception ex){
