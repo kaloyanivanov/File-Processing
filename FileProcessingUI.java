@@ -126,20 +126,20 @@ public class FileProcessingUI implements ActionListener{
 	 
 	
 	public void menu() {
-	     errorMessage.setVisible(false);
-	     window.setSize(950, 750);
-	     info.setVisible(true);
-      	     label.setText("You can switch two lines or switch two words in your text document.");
-   	     label.setBounds(20,0,1000,50);
-	     changeContentPreview();
-             text.setText("");
-             text.setBounds(100,60,200,30);
-             text.setVisible(true);
-             scroll.setVisible(true);
-	     firstButton.setText("Switch lines or words");
-	     firstButton.setBounds(310,60,170,30);
-	     secondButton.setVisible(true);
-	     thirdButton.setVisible(true);
+	    	 errorMessage.setVisible(false);
+	   	 window.setSize(950, 750);
+		 info.setVisible(true);
+  	    	 label.setText("You can switch two lines or switch two words in your text document.");
+  	 	 label.setBounds(20,0,1000,50);
+		 changeContentPreview();
+ 	         text.setText("");
+    	         text.setBounds(100,60,200,30);
+    	         text.setVisible(true);
+    	         scroll.setVisible(true);
+		 firstButton.setText("Switch lines or words");
+		 firstButton.setBounds(310,60,170,30);
+		 secondButton.setVisible(true);
+		 thirdButton.setVisible(true);
 	   
 		
 		
