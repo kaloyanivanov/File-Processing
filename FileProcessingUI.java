@@ -32,15 +32,15 @@ public class FileProcessingUI implements ActionListener{
 	  private boolean wantToLoadAnotherFile=false;
 
 	 public FileProcessingUI () {
-		 	label=new JLabel();  
-			label.setFont(new Font("Serif", Font.PLAIN, 25));
-			label.setText("Enter path of file to be processed:");
-			label.setBounds(310,0,1000,50); 
-			window.add(label);
-			label.setVisible(true);
-			text.setBounds(380,50,200,30); 
-			text.setVisible(true);
-			window.add(text);
+		    label=new JLabel();  
+		    label.setFont(new Font("Serif", Font.PLAIN, 25));
+		    label.setText("Enter path of file to be processed:");
+		    label.setBounds(310,0,1000,50); 
+		    window.add(label);
+		    label.setVisible(true);
+		    text.setBounds(380,50,200,30); 
+		    text.setVisible(true);
+		    window.add(text);
 		    firstButton.setBounds(430,100,95,30); 
 		    firstButton.addActionListener(this);
 		    firstButton.setText("Submit");
@@ -57,27 +57,27 @@ public class FileProcessingUI implements ActionListener{
 		    window.add(thirdButton);
 		    content.setEditable(false);
 		    scroll.setBounds(50, 150, 500, 500);
-	        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-	        scroll.setVisible(false);
-	        window.add(scroll);
-	        errorMessage=new JLabel("Please enter a valid file path.");  
-			errorMessage.setBounds(150,150,1000,30); 
-			errorMessage.setFont(new Font("Serif", Font.PLAIN, 25));
-			errorMessage.setForeground(Color.red);
-			errorMessage.setVisible(false);
-	        window.add(errorMessage);
-	        info.setBounds(20,110,1000,30);
-	        info.setVisible(false);
-	        window.add(info);
-	        window.addWindowListener(new WindowAdapter() {
+		    scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+	            scroll.setVisible(false);
+	            window.add(scroll);
+	            errorMessage=new JLabel("Please enter a valid file path.");  
+		    errorMessage.setBounds(150,150,1000,30); 
+		    errorMessage.setFont(new Font("Serif", Font.PLAIN, 25));
+	            errorMessage.setForeground(Color.red);
+		    errorMessage.setVisible(false);
+	       	    window.add(errorMessage);
+	       	    info.setBounds(20,110,1000,30);
+	       	    info.setVisible(false);
+	       	    window.add(info);
+	      	    window.addWindowListener(new WindowAdapter() {
 			    public void windowClosing(WindowEvent e) {
 			    	 isWindowClosed=true;
 			    }
 			
 			});
-	        window.setSize(1000, 600);
-			window.setResizable(false);
-			window.setLayout(null);  
+	            window.setSize(1000, 600);
+		    window.setResizable(false);
+		    window.setLayout(null);  
 		    window.setVisible(true);
 		 
 	 }
@@ -126,20 +126,20 @@ public class FileProcessingUI implements ActionListener{
 	 
 	
 	public void menu() {
-		errorMessage.setVisible(false);
-		window.setSize(950, 750);
-		info.setVisible(true);
-        label.setText("You can switch two lines or switch two words in your text document.");
-        label.setBounds(20,0,1000,50);
-        changeContentPreview();
-        text.setText("");
-        text.setBounds(100,60,200,30);
-        text.setVisible(true);
-        scroll.setVisible(true);
-	    firstButton.setText("Switch lines or words");
-	    firstButton.setBounds(310,60,170,30);
-	    secondButton.setVisible(true);
-	    thirdButton.setVisible(true);
+	     errorMessage.setVisible(false);
+	     window.setSize(950, 750);
+	     info.setVisible(true);
+      	     label.setText("You can switch two lines or switch two words in your text document.");
+   	     label.setBounds(20,0,1000,50);
+	     changeContentPreview();
+             text.setText("");
+             text.setBounds(100,60,200,30);
+             text.setVisible(true);
+             scroll.setVisible(true);
+	     firstButton.setText("Switch lines or words");
+	     firstButton.setBounds(310,60,170,30);
+	     secondButton.setVisible(true);
+	     thirdButton.setVisible(true);
 	   
 		
 		
@@ -159,15 +159,15 @@ public class FileProcessingUI implements ActionListener{
 	 
 	 public void fileErrorMessage() {
 		    errorMessage.setText("Please enter a valid file path.");;  
-			errorMessage.setBounds(150,150,1000,50); 
-			errorMessage.setVisible(true);
+		    errorMessage.setBounds(150,150,1000,50); 
+		    errorMessage.setVisible(true);
 		 
 	 }
 	 
 	 public void emptyFileErrorMessage() {
 		    errorMessage.setText("File empty");;  
-			errorMessage.setBounds(150,150,1000,50); 
-			errorMessage.setVisible(true);
+		    errorMessage.setBounds(150,150,1000,50); 
+		    errorMessage.setVisible(true);
 		 
 	 }
 	 
@@ -198,10 +198,9 @@ public class FileProcessingUI implements ActionListener{
 	}
 	
 	public void changeContentPreview() {
-		content.setText("");
-        for(int i=0; i < lines.size(); i++)
-		   {
-        	content.append(lines.get(i)+"\n");
+	   content.setText("");
+       	   for(int i=0; i < lines.size(); i++){
+              content.append(lines.get(i)+"\n");
 		    }
 	}
 
